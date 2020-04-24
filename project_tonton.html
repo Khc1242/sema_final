@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonton Friends</title>
+    <link rel="stylesheet" href="project_tonton.css">
+    <link rel="icon" type="image/x-icon" href="tt.ico"/>
+</head>
+<body>
+    <a style="font-weight: bold; font-size: xx-large; text-decoration:none; color: rgb(117, 47, 7);" href="index.html">Index</a>
+
+    <header>
+        <img src="tonton/tonton_logo.png" alt="">
+    </header>
+
+    <main>
+        <img src="tonton/tonton_friends.png" alt="">
+        <h1>
+            Let's meet them!
+            <br>
+            Start a cute friendship!
+        </h1>
+        <article class="ar">
+            <section class="sec">
+                <img class="tonton" src="tonton/tontontobi.png" alt="">
+                <p class="p">
+                    <br>
+                    <span style="font-weight: bold;">Tobi<br>A chubby bunny</span><br><br>
+
+                    Birthday: <br>
+                    MAY 31st<br><br>
+
+                    Hobbies: <br>
+                    Dancing<br><br>
+
+                    Likes: <br>
+                    Self-talk, <br>Ice cream, Sweet, Banana, Watermelon.<br><br>
+
+                    Instagram: <br>@tobi.tontonfriends<br><br>
+
+
+                    Personality: <br>
+                    Always positive and cheerful.
+
+                </p>
+
+            </section>
+
+            <section class="sec">
+                <img class="tonton" src="tonton/tontonwinnie.png" alt="">
+
+                <p class="p">
+                    <br>
+                    <span style="font-weight: bold;">Winnie<br>A timid bear</span><br><br>
+
+                    Birthday: <br>
+                    DEC 10th<br><br>
+
+                    Hobbies: <br>
+                    Sleep. Lying down.<br><br>
+
+                    Likes: <br>
+                    Rainy day, Americano, Park bench, Coffee shop corner.<br><br>
+
+                    Instagram: <br>
+                    @winnie.tontonfriends<br><br>
+
+                    Personality: <br>
+                    Likes to be alone and likes to stay at home. Timid.<br>
+
+                </p>
+            </section>
+
+            <section class="sec">
+                <img class="tonton" src="tonton/tontonyuta.png" alt="">
+
+                <p class="p">
+                    <br>
+                    <span style="font-weight: bold;">Yuta<br>A chubby shiba</span><br><br>
+
+                    Birthday: <br>
+                    JUL 7<br><br>
+
+                    Hobbies: <br>
+                    Talk<br><br>
+
+                    Likes: <br>
+                    Beer, <br>Getting discounts and more, Cooking.<br><br>
+
+                    Instagram: <br>
+                    @yuta.tontonfriends<br><br>
+
+                    Personality: <br>
+                    Always expressionless, but more affectionate than anyone.
+
+                </p>
+            </section>
+
+            <section class="sec">
+                <img class="tonton" src="tonton/tontonbella.png" alt=""> 
+
+                <p class="p">
+                    <br>
+                    <span style="font-weight: bold;">Bella<br>A tsundere cat</span><br><br>
+
+                    Birthday: <br>
+                    OCT 25th<br><br>
+
+                    Hobbies: <br>
+                    Selfie, Make-up<br><br>
+
+                    Likes: <br>
+                    Salad, <br>Sunglasses, Shopping.<br><br>
+
+                    Instagram: <br>
+                    @bella.tontonfriends<br><br>
+
+                    Personality: <br>
+                    A little Sassy, but the heart is tender-hearted.
+
+                </p>
+            </section>
+
+            <section class="sec">
+                <br>
+                <img class="tonton" src="tonton/tontonnari.png" alt="">
+
+                <p class="p">
+                    <br>
+                    <span style="font-weight: bold;">Nari<br>A  chubby chick</span><br><br>
+
+                    Birthday: <br>
+                    MAR 22nd<br><br>
+
+                    Hobbies: <br>
+                    Facial mask pack, Lower-body bathing.<br><br>
+
+                    Likes: <br>
+                    Airplane, Video Game<br><br>
+
+                    Instagram: <br>
+                    @nari.tontonfriends<br><br>
+
+                    Personality: <br>
+                    Clumsy, Hate being alone.
+
+                </p>
+            </section>
+
+            <hr>
+
+            <footer style="font-size: 20px;">
+                <div>
+                    Powered by: <br>@khc_1242
+                </div>
+                <div>
+                    Encountering MCO.
+                </div>
+            </footer>
+
+        </article>
+
+    </main>
+
+    <script>
+        const images = document.querySelectorAll('.ar .tonton');
+        let isImageVisible = false;
+   
+        function debounce(func, wait = 20, immediate = true) {
+         var timeout;
+         return function() {
+           var context = this, args = arguments;
+           var later = function() {
+             timeout = null;
+             if (!immediate) func.apply(context,args);
+           };
+           var callNow = immediate && !timeout;
+           clearTimeout(timeout);
+           timeout = setTimeout(later, wait);
+           if (callNow) func.apply(context, args);
+         };
+       };
+       function slideImages(e) {
+         images.forEach(image => {
+           let halfHeight = image.getClientRects()[0].top + image.height / 2;
+           isImageVisible = halfHeight < window.innerHeight && halfHeight > 0;
+   
+           let method = isImageVisible ? 'add' : 'remove';
+           image.classList[method]('visible');
+         });
+       }
+       window.addEventListener('scroll', debounce(slideImages, 30));
+       function w3_open() {
+         document.getElementById("mySidebar").style.display = "block";
+         document.getElementById("myOverlay").style.display = "block";
+   }
+    
+       function w3_close() {
+         document.getElementById("mySidebar").style.display = "none";
+         document.getElementById("myOverlay").style.display = "none";
+   }
+     </script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duffy and Friends</title>
+    <link rel="stylesheet" href="project_duffy.css">
+    <link rel="icon" type="image/x-icon" href="mickey.ico"/>
+</head>
+<body>
+    <a style="font-weight: bold; font-size: xx-large; text-decoration:none; color: rgb(162, 112, 255);" href="index.html">Index</a>
+
+    <main>
+        <div>
+            <img class="duffy_banner" src="duffy/d_banner.png" alt="" height="350">
+        </div>
+        <article class="ar">
+            <section class="sec">
+                <h1 id="duffyst">Stories:</h1><br>
+                <p class="p">
+                        <span style="font-weight: bold;">Duffy</span> is the cute, loveable teddy bear handmade as a gift for Mickey
+                        by his sweetheart Minnie Mouse. Together, Duffy and Mickey
+                        travel the world sharing exciting adventures and making lifelong friends, 
+                        including <span style="font-weight: bold;">ShellieMay, Gelatoni, StellaLou and CookieAnn</span>. 
+                </p><br>
+                <h1 id="duffych">Characters:</h1><br>
+            </section>
+
+            <section class="duf">
+                <div id="hover">
+                    <img class="df" src="duffy/d_duffy.png" alt="">
+                </div>
+
+                <p class="p">
+                    <span style="font-weight: bold; font-size: larger;">Duffy</span><br><br>
+                    Mickey was getting ready to set sail on a long sea voyage, <br>
+                    and Minnie made him a special teddy bear <br>
+                    to take with him so he wouldn’t be lonely. <br>
+                    Mickey loved the bear and name him Duffy. <br>
+                    They visited all sorts of exciting places <br>
+                    and made a lot of friends along the way.<br>
+                </p>
+
+            </section>
+
+            <section class="she">
+                <div id="hover">
+                    <img class="df" src="duffy/d_shelliemay.jpeg" alt="">
+                </div>
+
+                <p class="p">
+                    
+                    <span style="font-weight: bold; font-size: larger;">ShellieMay</span><br><br> 
+                    Minnie was making a new friend for Duffy, <br>
+                    who was a sweet girl. <br>
+                    The first time they met, Duffy gave her a seashell pendant. <br>
+                    “Let’s be friends!” said Duffy. <br>
+                    Minnie then got an idea to name her ShellieMay.<br>
+                </p>
+            </section>
+
+            <section class="gel">
+                <div id="hover">
+                    <img class="df" src="duffy/d_gelatoni.png" alt="">
+                </div>              
+
+                <p class="p">
+                    
+                    <span style="font-weight: bold; font-size: larger;">Gelatoni</span><br><br>
+                    Duffy was taking a walk with Mickey <br>
+                    and accidentally plopped his gelato to the ground. <br>
+                    A grey tuxedo cat named Gelatoni showed up <br>
+                    and began painting with the melting gelato with his tail. <br>
+                    Duffy smiled and started to paint together. <br>
+                    And that’s how Duffy and Gelatoni met!<br>
+                </p>
+            </section>
+
+            <section class="coo">
+                <div id="hover">
+                    <img class="df" src="duffy/cookie2.png" alt="">
+                </div>
+                <p class="p">
+                    <span style="font-weight: bold; font-size: larger;">CookieAnn</span><br><br>
+                    Duffy first met CookieAnn <br>
+                    when he was about to enjoy some cotton candy. <br>
+                    He accidentally bumped into CookieAnn <br>
+                    who was carrying a huge stack of waffles
+                    and all their treats flew into the air! <br>
+                    Luckily, CookieAnn caught the ingredients <br>
+                    and turned them into a delicious cotton candy waffle!<br>
+                </p>
+            </section>
+
+            <section class="ste">
+                <div id="hover">
+                    <img class="df" src="duffy/d_stellalou.png" alt=""> 
+                </div>
+
+                <p class="p">                    
+                    <span style="font-weight: bold; font-size: larger;">StellaLou</span><br><br>
+                    StellaLou is a little lavender-colored bunny, <br>
+                    with cute ears, starry eyes, and <br>
+                    dreams of dancing on the Broadway stage. <br>
+                    Duffy and StellaLou first met on an American waterfront where Duffy, <br>
+                    seeing StellaLou stumbled mid-practice, called out to her in concern. <br>
+                    StellaLou then shared with Duffy her dream of becoming a dancer.<br>
+                </p>
+            </section>
+
+            <hr>
+
+            <footer style="font-size: 20px;">
+                <div>
+                    Powered by: <br>@khc_1242
+                </div>
+                <div>
+                    Encountering MCO.
+                </div>
+            </footer>
+
+        </article>
+
+    </main>
+
+    <script>
+        const images = document.querySelectorAll('.ar .df');
+        let isImageVisible = false;
+   
+        function debounce(func, wait = 20, immediate = true) {
+         var timeout;
+         return function() {
+           var context = this, args = arguments;
+           var later = function() {
+             timeout = null;
+             if (!immediate) func.apply(context,args);
+           };
+           var callNow = immediate && !timeout;
+           clearTimeout(timeout);
+           timeout = setTimeout(later, wait);
+           if (callNow) func.apply(context, args);
+         };
+       };
+       function slideImages(e) {
+         images.forEach(image => {
+           let halfHeight = image.getClientRects()[0].top + image.height / 2;
+           isImageVisible = halfHeight < window.innerHeight && halfHeight > 0;
+   
+           let method = isImageVisible ? 'add' : 'remove';
+           image.classList[method]('visible');
+         });
+       }
+       window.addEventListener('scroll', debounce(slideImages, 30));
+       function w3_open() {
+         document.getElementById("mySidebar").style.display = "block";
+         document.getElementById("myOverlay").style.display = "block";
+   }
+    
+       function w3_close() {
+         document.getElementById("mySidebar").style.display = "none";
+         document.getElementById("myOverlay").style.display = "none";
+   }
+     </script>
+</body>
+</html>

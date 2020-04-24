@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+	padding: 0;
+    font-family: cursive;
+    background-repeat: no-repeat;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    min-width: 700px;
+    max-width: 1700px;
+    background: #19396a;
+}
+
+h1{
+    color: whitesmoke;
+    background-color: rgb(209, 140, 50);
+    margin: 20px 0 0 20px;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+#duffyst{
+    width: 180px;
+}
+
+#duffych{
+    width: 270px;
+}
+
+main {
+    background-color: #19396a;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+div .duffy_banner {
+    display: flex;
+    margin: auto;
+}
+
+.ar {
+    background: #f7f7f7;
+    text-align: justify;
+    overflow: hidden;
+}
+
+section .df {
+    width: 300px;
+    float: right;
+    margin: 15px 0 10px 20px;
+    right: 50%;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.74, 0.95);
+}
+
+  
+section .df.visible {
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+    transform: scale(1);
+}
+
+.duf {
+    background-color: #f7f7f7;
+    color: rgb(163, 36, 13);
+}
+
+.she {
+    background-color: #e27ea0;
+    color: #f7f7f7;
+}
+
+.gel {
+    background-color: #f7f7f7;
+    color: rgb(163, 36, 13);
+}
+
+.coo {
+    background-color: #ee7594;
+    color: #f7f7f7;
+}
+
+.ste {
+    background-color: #f7f7f7;
+    color: rgb(163, 36, 13);
+}
+
+#hover {
+    width: 300px;
+    height: 300px;
+    border:transparent;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+#hover img {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#hover img:hover{
+    transform: scale(1.5);
+    transition: all 0.5s ease 0s;
+}
+
+.p {
+    padding: 10px 25px 70px 25px;
+}
+
+.p:first-of-type{
+    text-indent: 40px;
+}
+
+hr {
+    height: 15px;
+    border-style: solid;
+    border-color: rgb(255, 136, 0);
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div{
+    display: inline-block;
+    margin-left: 50px;
+    margin-bottom: -20px;
+    padding: 10;
+    text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+    header img{
+        width: 32vw;
+        padding: 50px 35px;
+    }
+
+    main img{
+        width: 90vw;
+        padding: 50px 35px;
+    }
+
+    h1 {
+        width: 90vw;
+        padding: 50px 35px;
+    }
+
+    .ar {
+      width: 90vw;
+      padding: 50px 35px;
+    }
+
+    .p { font-size: 14px; }
+    }
+  
+@media screen and (max-width: 500px) {
+    .p { font-size: 13px; }
+    }
